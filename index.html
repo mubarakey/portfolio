@@ -15,9 +15,9 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <h3>Mubarak Abdulkareem</h3>
+                <h3>Mubarak Abdulkareem.</h3>
             </div>
-            <div class="nav">
+            <div class="nav" id="nav">
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
@@ -34,12 +34,15 @@
                     </li>
                 </ul>
             </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
     </header>
     <!-- End of Header -->
 
     <!-- Hero Content -->
-     <div class="hero">
+     <div class="hero reveal">
         <div class="hero-content">
             <p>Hi, my name is</p>
             <h1>Mubarak Abdulkareem</h1>
@@ -208,20 +211,41 @@
             </div>
             <div class="faq-content">
                 <div class="faq-item">
-                    <h3>What technologies do you specialize in?</h3>
-                    <p>I specialize in HTML, CSS, JavaScript, and Ruby on Rails. I also have experience with Git, GitHub, and various APIs.</p>
+                    <div class="faq-question">
+                        <h3>What technologies do you specialize in?</h3>
+                        <i class="fa-solid fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                         <p>I specialize in HTML, CSS, JavaScript, and Ruby on Rails. I also have experience with Git, GitHub, and various APIs.</p>
+                    </div>
+                   
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Are you available for freelance / internship?</h3>
+                        <i class="fa-solid fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, I am currently available for freelance and internship opportunities.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <h3>Are you available for freelance / internship?</h3>
-                    <p>Yes, I am currently available for freelance and internship opportunities.</p>
+                    <div class="faq-question">
+                        <h3>How can I contact you?</h3>
+                        <i class="fa-solid fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can reach me via email or through my social media profiles listed on this website.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <h3>How can I contact you?</h3>
-                    <p>You can reach me via email or through my social media profiles listed on this website.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Where can I see more of your work?</h3>
-                    <p>You can view my portfolio and past projects on my website or GitHub profile.</p>
+                    <div class="faq-question">
+                        <h3>Where can I see more of your work?</h3>
+                        <i class="fa-solid fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can view my portfolio and past projects on my website or GitHub profile.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -230,7 +254,7 @@
         <!-- Footer Section -->
         <footer>
             <div class="footer-content">
-                <p>&copy; 2026 Mubarak Abdulkareem. All rights reserved.</p>
+                <p>&copy; <span id="year"></span> Mubarak Abdulkareem. All rights reserved.</p>
                 <div class="social-links">
                     <a href="#">LinkedIn</a>
                     <a href="#">GitHub</a>
@@ -240,6 +264,8 @@
             </div>
         </footer>
         <!-- End of Footer Section -->
+
+        <script src="./script/main.js"></script>
       
 </body>
 </html>

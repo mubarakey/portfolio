@@ -2,8 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+body {
     background-color: #FAF7F2;
     color:#2B2B2B;
+    overflow-x: hidden;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: "Space Grotesk", sans-serif;
@@ -18,6 +21,29 @@ p, a, li, span, button {
   font-style: normal;
 }
 
+/* keyframes sections looked up online (still learning this) */
+@keyframes fadeSlideUp {
+   from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); } 
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+.reveal {
+    opacity: 0;
+}
+.reveal.visible {
+    animation: fadeSlideUp 0.7s ease forwards;
+}
+
+
 /* header/navigation */
 .header-container {
     display: flex;
@@ -28,16 +54,63 @@ p, a, li, span, button {
     position: sticky;
     top: 0;
     z-index: 1000;
+     transition: box-shadow 0.3s ease;
+}
+.header-container.scrolled {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+.header-container .logo h3 {
+    font-weight: 700;
 }
 .nav ul{
     list-style: none;
     display: flex;
     gap: 20px;
     text-decoration: none;
+    align-items: center;
 }
 .nav ul li a {
     text-decoration: none;
     font-weight: normal;
+    position: relative;
+}
+.nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background-color: #BA7517;
+    transition: width 0.25s ease;
+}
+.nav ul li a:hover::after {
+    width: 100%;
+}
+.header-container .nav button  {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #BA7517 ;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.header-container .nav button:hover,
+.hero-content button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(186, 117, 23, 0.35);
+}
+.header-container .nav button a {
+    background-color: #BA7517;
+}
+/* Hambuger */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #2B2B2B;
 }
 
 /* Hero Section */
@@ -65,6 +138,7 @@ p, a, li, span, button {
     border-radius: 5px;
     background-color: #BA7517 ;
     cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .hero-content button a {
     text-decoration: none;
@@ -83,6 +157,12 @@ p, a, li, span, button {
     padding: 10px;
     border-radius: 100%;
     align-self: center;
+    display: inline-flex;
+    transition: transform 0.25s ease, background-color 0.25s ease;
+}
+.hero-content .social-link ul li a:hover {
+    transform: rotate(12deg) scale(1.1);
+    background-color: #E5DFD3;
 }
 .hero-image {
     max-width: 50%;
@@ -135,11 +215,12 @@ p, a, li, span, button {
     border: 1px solid #ddd;
     border-radius: 10px;
     text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 .skill-cards .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-color: #BA7517;
 }
 
 /* Project Section */
@@ -158,12 +239,21 @@ p, a, li, span, button {
     padding: 20px;
     margin: 20px;
     width: 300px;
-    
+     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    overflow: hidden;
+}
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 .project-card img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+    transition: transform 0.4s ease;
+}
+.project-card:hover img {
+    transform: scale(1.06);
 }
 .project-card ul {
     display:flex;
@@ -187,6 +277,13 @@ p, a, li, span, button {
     border-radius: 10px;
     border: 1px solid #E5DFD3;
     width: 100%;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    text-align: center;
+}
+.project-card .btn-link a:hover {
+    background-color: #BA7517;
+    border-color: #BA7517;
+    color: #FAF7F2;
 }
 /* faq */
 .faq-section {
@@ -197,4 +294,135 @@ p, a, li, span, button {
     border-radius: 10px;
     padding: 20px;
     margin: 20px;
+    transition: border-color 0.2s ease;
+}
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.faq-icon {
+    transition: transform 0.3s ease;
+    color: #BA7517;
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+.faq-answer p {
+    padding-top: 15px;
+}
+.faq-item.open .faq-answer {
+    max-height: 300px; 
+}
+.faq-item.open .faq-icon {
+    transform: rotate(45deg);
+}
+.faq-item.open {
+    border-color: #BA7517;
+}
+
+/* footer */
+footer {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+.footer-content {
+    text-align: center;
+}
+
+
+/*  RESPONSIVE / MOBILE STYLES */
+@media (max-width: 768px) {
+
+    /*  Nav: collapse into a hamburger-triggered dropdown  */
+    .menu-toggle {
+        display: block; 
+    }
+    .nav {
+        display: none; /* hidden until toggled open */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #FAF7F2;
+        box-shadow: 0 8px 12px rgba(0,0,0,0.08);
+    }
+    .nav.open {
+        display: block; 
+    }
+    .nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 16px;
+    }
+
+    
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+        gap: 30px;
+    }
+    .hero-content,
+    .hero-image {
+        max-width: 100%;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem; 
+    }
+    .hero-content .social-link ul {
+        justify-content: center;
+    }
+
+    /* About:*/
+    .about-header,
+    .about-section {
+        padding: 30px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-image,
+    .about-content {
+        max-width: 100%;
+    }
+    .about-content p br {
+        display: none; 
+    }
+
+    /* Skills*/
+    .skill-section {
+        padding: 30px 20px;
+    }
+    .skill-cards .card {
+        width: calc(50% - 20px);
+    }
+
+    /* Projects */
+    .projects {
+        padding: 30px 20px;
+    }
+    .project-card {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    /*  FAQ */
+    .faq-section {
+        padding: 30px 20px;
+    }
+    .faq-item {
+        margin: 15px 0;
+    }
+}
+
+/* ADDED: extra-small phones — skill cards drop to 1 per row */
+@media (max-width: 480px) {
+    .skill-cards .card {
+        width: 100%;
+    }
 }
