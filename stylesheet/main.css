@@ -2,15 +2,32 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #FAF7F2;
+    color:#2B2B2B;
 }
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+p, a, li, span, button {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* header/navigation */
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #f8f8f8;
+    background-color: #FAF7F2;
     position: sticky;
     top: 0;
+    z-index: 1000;
 }
 .nav ul{
     list-style: none;
@@ -20,7 +37,6 @@
 }
 .nav ul li a {
     text-decoration: none;
-    color: #333;
     font-weight: normal;
 }
 
@@ -35,6 +51,39 @@
 .hero-content {
     max-width: 50%;
 }
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 900;
+}
+.hero-content p {
+    font-size: 1rem;
+}
+.hero-content button {
+    margin: 10px 10px 10px 0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #BA7517 ;
+    cursor: pointer;
+}
+.hero-content button a {
+    text-decoration: none;
+    background-color: #BA7517 ;
+}
+.hero-content .social-link ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 10px;
+}
+.hero-content .social-link ul li a {
+    text-decoration: none;
+    border: 1px solid #E5DFD3;
+    padding: 10px;
+    border-radius: 100%;
+    align-self: center;
+}
 .hero-image {
     max-width: 50%;
 }
@@ -45,7 +94,11 @@
 
 /* About Section */
 .about-header {
-    margin: 30px;
+    padding: 50px;
+}
+.about-header h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
 }
 .about-section {
     padding: 50px;
@@ -66,13 +119,13 @@
 
 /* Skills Section */
 .skill-section {
-    /* width: 100%; */
+    padding: 50px;
 }
 .skill-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap:24px;
+    gap:15px;
 }
 .skill-cards .card {
     margin: 10px;
@@ -90,6 +143,9 @@
 }
 
 /* Project Section */
+.projects {
+    padding: 50px;
+}
 .project-card-div {
     display: flex;
     flex-wrap: wrap;
@@ -116,10 +172,9 @@
     padding: 0;
 }
 .project-card ul li {
-    border: 2px solid #ddd;
+    border: 2px solid #E5DFD3;
     border-radius: 15px;
     padding: 5px 10px;
-    background-color: #f8f8f8;
 }
 .project-card .btn-link {
     display: flex;
@@ -130,12 +185,15 @@
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #E5DFD3;
     width: 100%;
-    color:black;
+}
+/* faq */
+.faq-section {
+    padding: 50px;
 }
 .faq-item {
-    border: 1px solid #ddd;
+    border: 1px solid #E5DFD3;
     border-radius: 10px;
     padding: 20px;
     margin: 20px;
