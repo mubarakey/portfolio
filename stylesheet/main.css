@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    position: sticky;
+    top: 0;
+}
+.nav ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    text-decoration: none;
+}
+.nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: normal;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+
+}
+.hero-content {
+    max-width: 50%;
+}
+.hero-image {
+    max-width: 50%;
+}
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* About Section */
+.about-header {
+    margin: 30px;
+}
+.about-section {
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.about-image {
+    max-width: 50%;
+}
+.about-image img {
+    max-width: 100%;
+    height: auto;
+}
+.about-content {
+    max-width: 50%;
+}
+
+/* Skills Section */
+.skill-section {
+    /* width: 100%; */
+}
+.skill-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:24px;
+}
+.skill-cards .card {
+    margin: 10px;
+    padding: 10px;
+    width: 20vw;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.skill-cards .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Project Section */
+.project-card-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+.project-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    width: 300px;
+    
+}
+.project-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.project-card ul {
+    display:flex;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+.project-card ul li {
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    padding: 5px 10px;
+    background-color: #f8f8f8;
+}
+.project-card .btn-link {
+    display: flex;
+    justify-content: center;
+}
+.project-card .btn-link a {
+    margin: 10px 0 10px 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    width: 100%;
+    color:black;
+}
+.faq-item {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+}
