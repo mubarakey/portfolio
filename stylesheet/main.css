@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     background-color: #FAF7F2;
     color:#2B2B2B;
@@ -181,20 +182,46 @@ p, a, li, span, button {
     font-weight: 900;
 }
 .about-section {
-    padding: 50px;
+    /* padding: 50px; */
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 30px;
 }
 .about-image {
-    max-width: 50%;
+    max-width: 40%;
 }
 .about-image img {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
 }
 .about-content {
     max-width: 50%;
+}
+.quick-fact {
+    margin-top: 20px;
+}
+.about-content .quick-fact .learning {
+    display: flex;
+}
+.about-content .quick-fact .learning ul {
+    display: flex;
+    gap: 10px;
+    list-style-type: none;
+    margin-left: 10px;
+}
+.quick-fact button {
+    margin: 10px 10px 10px 0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #BA7517 ;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: #ddd;
+}
+.quick-fact button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(186, 117, 23, 0.35);
 }
 
 /* Skills Section */
